@@ -1,20 +1,98 @@
-﻿// library1.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
-//
+﻿
+#include <iostream>//Добавляем нужные библиотеки
+#include <vector>
+#include <string>
+using namespace std;
+class Line
+{
+	string a;
+	string b;
+	string c;
+	string d;
+	string e;
+	string f;
+public:
+	void changeA(string z)
+	{
+		a = z;
+	};
+	void changeB(string z)
+	{
+		b = z;
+	};
+	void changeC(string z)
+	{
+		c = z;
+	};
+	void changeD(string z)
+	{
+		d = z;
+	};
+	void changeE(string z)
+	{
+		e = z;
+	};
+	void changeF(string z)
+	{
+		f = z;
+	};
+	string retA()
+	{
+		return a;
+	};
+	string retB()
+	{
+		return b;
+	};
+	string retC()
+	{
+		return c;
+	};
+	string retD()
+	{
+		return d;
+	};
+	string retE()
+	{
+		return e;
+	};
+	string retF()
+	{
+		return f;
+	};
+};
 
-#include <iostream>
-
+void retAuth(vector<Line> mas, string a) //Выводим книги по автору
+{
+	int x = 0;
+	for (int i = 0; i < mas.size(); i++) 
+	{
+		if (a == mas[i].retC())
+		{
+			cout << mas[i].retA() << " | " << mas[i].retB() << " | " << mas[i].retC() << " | " << mas[i].retD() << " | " << mas[i].retE() << "| " << mas[i].retF() << endl;
+			x + 1;
+		}
+		else if((i == (mas.size() - 1)) && x == 0)
+		{
+			cout << "Данный автор отсутствует в списке";
+		}
+	}
+}
 int main()
 {
-    std::cout << "Hello World!\n";
+	setlocale(LC_ALL, "Russian");//Учим консоль русскому языку
+	Line a;
+	int n = 1;
+	vector<Line> mas(n);
+	a.changeA("Название");
+	a.changeB("Идентефикационный номер");
+	a.changeC("Автор");
+	a.changeD("Год издания");
+	a.changeE("Издательство");
+	a.changeF("Состояние на прошлый год");
+
+	cout << "Программа запущена, выберите нужную вам команду и ввдите ее номер только числом" << endl;
+	cout << "1. Добавить книгу в список" << 
 }
 
-// Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
-// Отладка программы: F5 или меню "Отладка" > "Запустить отладку"
 
-// Советы по началу работы 
-//   1. В окне обозревателя решений можно добавлять файлы и управлять ими.
-//   2. В окне Team Explorer можно подключиться к системе управления версиями.
-//   3. В окне "Выходные данные" можно просматривать выходные данные сборки и другие сообщения.
-//   4. В окне "Список ошибок" можно просматривать ошибки.
-//   5. Последовательно выберите пункты меню "Проект" > "Добавить новый элемент", чтобы создать файлы кода, или "Проект" > "Добавить существующий элемент", чтобы добавить в проект существующие файлы кода.
-//   6. Чтобы снова открыть этот проект позже, выберите пункты меню "Файл" > "Открыть" > "Проект" и выберите SLN-файл.
