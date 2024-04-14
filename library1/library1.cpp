@@ -219,7 +219,7 @@ int main()
 				}
 				else if (mas[i].retF() != z && (i == (mas.size() - 1)))
 				{
-
+					break;
 				}
 			}
 		}
